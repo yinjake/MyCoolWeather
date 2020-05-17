@@ -23,7 +23,7 @@ import com.example.sm.mycoolweather.gson.Forecast;
 import com.example.sm.mycoolweather.gson.Weather;
 import com.example.sm.mycoolweather.util.HttpUtil;
 import com.example.sm.mycoolweather.util.Utility;
-
+import com.example.sm.mycoolweather.service.AutoUpdateService;
 import java.io.IOException;
 
 import okhttp3.Call;
@@ -234,6 +234,8 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 
 }
